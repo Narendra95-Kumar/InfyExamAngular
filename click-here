@@ -1,0 +1,12 @@
+#!/bin/bash
+
+
+wmctrl -n 1
+
+chmod -r 777 /usr/local/bin
+#chmod 777 /python_scripts/Python/eval_run.sh
+
+python /root/idleTest.py > /home/user/fileIdle.txt 2>&1 &
+firefox /home/user/Desktop/user_repo/QP/index.html &
+#sh /setup_env.sh &
+sh /starter.sh 

@@ -1,0 +1,26 @@
+.error {
+ color: red;
+ font-size:20px;
+}
+error-message{
+    color: red;
+}
+.success {
+    color: green;
+    font-size:20px;
+   }
+
+
+.panel-heading {
+    text-align: center;
+    background-color: rgba(28, 139, 236, 1) 
+}
+
+.panel-body {
+    background-color: rgba(255, 255, 255, 0.616);
+
+}
+
+.panel {
+    background-color: rgba(255, 255, 255, 0.514);
+}

@@ -1,0 +1,22 @@
+.navbar-brand{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    color: white
+}
+.navbar-custom{
+    background-color: #337ab7;
+    color:white;
+}
+.nav-color{
+    color: white;
+}
+.nav-color:hover{
+    color: #337ab7;
+}
+
+a:focus, a:hover {
+    color: #23527c;
+}
+
+
+

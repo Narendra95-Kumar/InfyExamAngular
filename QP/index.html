@@ -1,0 +1,310 @@
+<html>
+<head>
+
+    <link rel="stylesheet" href="./css/styles.ec294d85b6bb1cdfb839.css">
+    <script src="./js/jquery.min.js" rel="text/javascript"></script>
+    <script src="./js/jquery-ui.min.js" rel="text/javascript"></script>
+    <script src="./js/bootstrap.js" rel="text/javascript"></script>
+	
+</head>
+
+<body>
+
+   <nav  class="uk-navbar-container uk-navbar" >
+  <div class="uk-navbar-left">
+    <img style="float:left;margin-top:8px;margin-left:15px;margin-right:15px;margin-bottom:8px" src="img/Asset 8.png" />
+    <a class="uk-margin-left-small uk-button uk-button-primary decpadding" href="#" id="questions" onclick="showWelcome()">
+      <span class="nav-text uk-visible@s">ASSESSMENT INSTRUCTIONS</span>
+    </a  >
+    <a class="uk-margin-left-small uk-button uk-button-primary decpadding" href="#" id="instructions" onclick="showInstructions()">
+      <span class="nav-text uk-visible@s">PROJECT INSTRUCTIONS</span>
+    </a>
+    <a class="uk-button uk-button-primary decpadding" href="#"id="questions" onclick="showQuestions()">
+      <span class="nav-text uk-visible@s">PROBLEM STATEMENT</span>
+    </a>
+  </div>
+</nav>
+
+
+
+ <div class="uk-container">
+
+<!-- -------------------------------------------------------------------------------- -->
+
+    <div style="display:none"  id="instructions_p">
+	<br><br>
+           <div>
+			<div align="center">
+			<span class="heading"> Angular Assessment </span>
+			</div>
+			</div>
+			<br>
+            <span class="heading">Startup Instruction:</span></p>
+            <p style="margin-bottom: .0001pt; line-height: normal; background: white;"><span style="font-size: 12.0pt; font-family: 'Segoe UI',sans-serif; color: black;">&nbsp;</span></p>
+            <ul style="margin-top: 0cm;">
+                <li>On the desktop click on the file &lsquo;<b>Click Here</b>&rsquo; and then click on &lsquo;<b>Execute</b>&rsquo;</li>
+                <li>This will setup the application (both frontend and backend) and run the Database</li>
+                <li>You just need to code in the <b>Frontend</b> application.</li>
+                <li>Read the problem statement and the other details provided carefully and implement the solution</li>
+            </ul>
+            <p style="margin-bottom: .0001pt; line-height: normal; background: white;"><span style="font-size: 12.0pt; font-family: 'Segoe UI',sans-serif; color: black;">&nbsp;</span></p>
+            <p style="margin-bottom: .0001pt; line-height: normal; background: white;"><span class="heading">Project Instruction:</span></p>
+            <p style="margin-bottom: .0001pt; line-height: normal; background: white;"><span style="font-size: 12.0pt; font-family: 'Segoe UI',sans-serif; color: black;">&nbsp;</span></p>
+            <ul style="margin-top: 0cm;">
+                <li>This a single problem statement with <strong>13 steps</strong> that need to be implemented.</li>
+                <li>You need to solve this problem in <strong>3 Hours</strong>.</li>
+                <li><strong>Backend</strong> folder contains the <strong>server side code</strong>.</li>
+                <li><strong>Frontend </strong> folder should contain the <strong>client side code.</strong></li>
+                <li>The Webservice is running on port <b>3000.</b></li>
+                <li><strong>DO NOT</strong>alter the function name or the argument list of the function that is provided to you.</li>
+                <li><strong>DO NOT</strong> add any new functions apart from the one given in the file where you write the solution.</li>
+                <li>Use the <strong>bootstrap classes/provided css</strong> wherever necessary.</li>
+                </ul>
+                <p style="margin-bottom: .0001pt; line-height: normal; background: white;"><span style="font-size: 12.0pt; font-family: 'Segoe UI',sans-serif; color: black;">&nbsp;</span></p>
+    
+        <div align="center"><button class="uk-button uk-button-primary uk-button-small" onclick="showWelcome();">Prev</button>&nbsp;&nbsp;&nbsp;<button onclick="showQuestions()" class="uk-button uk-button-primary uk-button-small">Next</button></div>
+    </div>
+	<br>
+    <br>
+
+<!-------------------------------------------------------------------------------- -->    
+
+    <div style="display:none" id="questions_p">
+       <div>
+			<div align="center">
+			<span class="heading"> Angular Assessment </span>
+			</div>
+			</div>
+			<br/>
+			<div style="border:2px solid black">
+			Note: On clicking Execute button for the first time, In case you see any message like Compilation Error in Project/Result File Not Found , Click on &lsquo;Execute&rsquo; again
+			</div>
+			
+            <p style="line-height: 150%; page-break-after: avoid; margin: 12.0pt 0cm .0001pt 0cm;"><span class="heading">Problem Description:</span></p>
+            <p style="text-align: justify; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Floating Restaurant is a Front end (Angular) application which connects with Backend REST API service to automate the process of booking a buffet for their customers and v</span><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">iew booking details.</span></p>
+            <p style="text-align: justify; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Details of Backend REST API service (Implemented)-</b></span></p>
+            <ul type="disc">
+            <li><p style="text-align: justify; line-height: 150%;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Booking a Buffet</span></strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> &ndash; This service books a buffet by sending POST request at <em>/buffetBookings. </em>The customer gets assigned a booking Id. The booking JSON is sent in the request body. </span></p>
+            <p style="text-align: justify; line-height: normal; margin-left: 20px;"><em><span style="font-family: 'Segoe UI',sans-serif;">"Buffet booked with booking 1001"</span></em></p></li>
+            <p style="text-align: justify; line-height: normal;"><em><span style="font-family: 'Segoe UI',sans-serif;">&nbsp;</span></em></p>
+            <li><p style="text-align: justify; line-height: normal;"><span style="font-family: 'Segoe UI',sans-serif;">In case a buffet is already booked for the given date, below message is sent-</span></p>
+            <p style="text-align: justify; line-height: normal; margin-left: 20px;"><em><span style="font-family: 'Segoe UI',sans-serif;">"Buffet is already booked on this date!"</span></em></p></li>
+            <p style="text-align: justify; line-height: normal;"><em><span style="font-family: 'Segoe UI',sans-serif;">&nbsp;</span></em></p>
+            <li><p style="text-align: justify; line-height: 150%;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Returning details of a booking through id:</span></strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> This service returns a JSON response containing details a particular booking id by sending GET request at <em>/buffetBookings/&lt;id&gt;</em></span></p>
+            <p style="text-align: justify; line-height: normal;"><span style="font-family: 'Segoe UI',sans-serif;"><b>Note:</b> The value of '<i>bookedOn</i>' field is sent in the format - "<i>2018-10-09</i>" from the web service.</span></p></li>
+            <p style="text-align: justify; line-height: normal;"><em><span style="font-family: 'Segoe UI',sans-serif;">&nbsp;</span></em></p>
+            <li><p style="text-align: justify; line-height: normal;"><span style="font-family: 'Segoe UI',sans-serif;">In case booking id is not available, following response is sent </span></p>
+            <p style="text-align: justify; line-height: normal; margin-left: 20px;"><em><span style="font-family: 'Segoe UI',sans-serif;">"Reservation for booking Id: 10012 is not found!"</span></em></p></li>
+            <p style="text-align: justify; line-height: normal;"><em><span style="font-family: 'Segoe UI',sans-serif;">&nbsp;</span></em></p>
+            </ul>
+            <p style="text-align: center; line-height: normal;"><strong><span class="heading"><b>------------ To be implemented -------------</b></span></strong></p>
+            <p style="margin-bottom: .0001pt; line-height: 115%;"><strong><span style="line-height: 115%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></strong></p>
+            <p style="margin-bottom: .0001pt; line-height: 115%;"><strong><span style="line-height: 115%; font-family: 'Segoe UI',sans-serif;"><b>Details of Floating Restaurant Front end application</b></span></strong></p>
+            <p style="margin-bottom: .0001pt; line-height: 115%;"><strong><span style="line-height: 115%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></strong></p>
+            <ol>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> When <strong>&ldquo;http://localhost:4200&rdquo;</strong> is entered in browser following form should be displayed:</span><br/><br/>
+            <img src="./img/point1_img1.png"></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> Populate the Buffet Name field with the following values.</span><br/><br/>
+                <table style="margin-left: 35.0pt; border-collapse: collapse; border: none;">
+                    <tbody>
+                    <tr>
+                    <td style="width: 161.75pt; border: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="216">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Option</b></span></strong></p>
+                    </td>
+                    <td style="width: 175.5pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="234">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Value</b></span></strong></p>
+                    </td>
+                    <td style="width: 76.5pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="104">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Disabled</b></span></strong></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 161.75pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="216">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Select a buffet</span></p>
+                    </td>
+                    <td style="width: 175.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="234">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">&lt;Empty string i.e &lsquo;&rsquo;&gt;</span></p>
+                    </td>
+                    <td style="width: 76.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="104">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Yes</span></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 161.75pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="216">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">South Indian Festival Special</span></p>
+                    </td>
+                    <td style="width: 175.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="234">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">SouthIndianFestivalSpecial</span></p>
+                    </td>
+                    <td style="width: 76.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="104">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">No</span></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 161.75pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="216">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">North Indian Festival Special</span></p>
+                    </td>
+                    <td style="width: 175.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="234">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">NorthIndianFestivalSpecial</span></p>
+                    </td>
+                    <td style="width: 76.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="104">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">No</span></p>
+                    </td>
+                    </tr>
+                    <tr>
+                    <td style="width: 161.75pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="216">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Chinese Special</span></p>
+                    </td>
+                    <td style="width: 175.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="234">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">ChineseSpecial</span></p>
+                    </td>
+                    <td style="width: 76.5pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="104">
+                    <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">No</span></p>
+                    </td>
+                    </tr>
+                    </tbody>
+                    </table>
+            </li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> Add validations for form controls as below. Use field names as mentioned below and use validations inside a component only.</span><br/><br/>
+                <table style="margin-left: 35.75pt; border-collapse: collapse; border: none;">
+            <tbody>
+            <tr>
+            <td style="width: 105.2pt; border: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="140">
+            <p style="text-align: center; line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Field name</b></span></strong></p>
+            </td>
+            <td style="width: 324.0pt; border: solid windowtext 1.0pt; border-left: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="432">
+            <p style="text-align: center; line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><strong><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Validations Required</b></span></strong></p>
+            </td>
+            </tr>
+            <tr>
+            <td style="width: 105.2pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="140">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">buffetName</span></p>
+            </td>
+            <td style="width: 324.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="432">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Required validation</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td style="width: 105.2pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="140">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">emailId</span></p>
+            </td>
+            <td style="width: 324.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="432">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Required validation, Basic Email validation</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td style="width: 105.2pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="140">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">plateCount</span></p>
+            </td>
+            <td style="width: 324.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="432">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Required validation, Minimum 1</span></p>
+            </td>
+            </tr>
+            <tr>
+            <td style="width: 105.2pt; border: solid windowtext 1.0pt; border-top: none; padding: 0cm 5.4pt 0cm 5.4pt;" width="140">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">bookedOn</span></p>
+            </td>
+            <td style="width: 324.0pt; border-top: none; border-left: none; border-bottom: solid windowtext 1.0pt; border-right: solid windowtext 1.0pt; padding: 0cm 5.4pt 0cm 5.4pt;" width="432">
+            <p style="line-height: 150%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">Required validation</span></p>
+            </td>
+            </tr>
+            </tbody>
+            </table>
+            <br>
+		
+			
+            </li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>  
+            <li style="margin-left: 18.0pt;"><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;"> When <strong>Book a buffet</strong> is clicked Buffet Reservation Page should be displayed as below:</span><br/>
+                <br><img src="./img/point3_img1.png"></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt;"><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;"> Validation messages should be rendered as below:</span><br/><br/>
+            <img src="./img/point5_img1.png">
+            <p style="margin-left: 22.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Note: </b>Button should remain disabled until the form becomes valid</span></p></li>
+            </ul>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> On successful execution, the success message should be displayed as shown below:</span><br/><br/>
+            <img src="./img/point6_img1.png"></li>
+            <p style="line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> In case if you are trying to book the buffet for which it is already booked, the error message should be displayed as shown below:</span><br/><br/>
+            <img src="./img/point7_img1.png"></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> In case of user entering the date which is past date, the error message should be displayed as shown below:</span><br/><br/>
+            <img src="./img/point8_img1.png"></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> When <strong>View</strong> <strong>Bookings</strong> is clicked view should be displayed as shown below:</span><br/><br/>
+            <img src="./img/point9_img1.png"></li>
+            <p style="margin-left: 54.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Note:</b> DO NOT USE a form element to create the above component</span></p>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> When user enters booking id and clicks on get details, details of that particular booking id should be shown as below:</span><br/><br/>
+            <img src="./img/point10_img1.png"></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> Transform the </span></li>
+            <ul type="disc" style="margin-left: 18.0pt;">
+                <li><p style="margin-left: 5.0pt; text-indent: 10.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Booking date field - </b>Render the date value in the format shown above.</span></p></li>
+                <li><p style="margin-left: 5.0pt; text-indent: 10.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"><b>Plate count field - </b>If the <strong>Plate Count </strong>is greater than 5, it should be transformed as &ldquo;more than 5 plates&rdquo; else it should be &ldquo;5 or less plates&rdquo;</span></p></li>
+            </ul>
+            	
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> If entered booking Id doesn&rsquo;t exist, it should display error as per given screenshot </span></li><br/>
+            <img src="./img/point11_img1.png">
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            <li style="margin-left: 18.0pt; line-height: 150%;"><span style="line-height: 150%; font-family: 'Segoe UI',sans-serif;"> If the correct booking Id is mentioned and if the &ldquo;Get Details&rdquo; button is clicked, then the error message (if any) must disappear and the appropriate details must be rendered.</span></li>
+            <p><span style="line-height: 107%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+            </ol>
+            <p style="text-align: center; line-height: 150%;"><span class="heading">~~~~~~~~~~~~~~ All the Best ~~~~~~~~~~~~~~</span></strong></p>
+                    
+                   <div align="center"> <button class="uk-button uk-button-primary uk-button-small uk-flex uk-flex-middle uk-icon" onclick="showInstructions()">Prev</button></div>
+                   <p style="line-height: 115%; margin: 0cm 0cm .0001pt 18.0pt;"><span style="font-size: 12.0pt; line-height: 115%; font-family: 'Segoe UI',sans-serif;">&nbsp;</span></p>
+                </div>
+
+<!-- ------------------------------------------------------------------------------- -->
+
+    <div style="display:none" id="welcome_p" >
+        <div>
+		<div align="center">
+        <span class="heading"> Angular Assessment </span>
+		</div>
+		</div>
+		<br>
+          <span class="heading">Must Read Instructions Before You Start Your Assessment:</span>
+	<ul>
+	<li>
+		You have been provided with an environment with the necessary softwares and tools for you to complete the assessment. Your time will start only after you enter the environment.
+    </li>
+    <br>
+	<li>The Project has already been loaded into your environment. Execute the file "Click here" to complete the setup. In case you close this tab/browser, you can execute the file "instructions.sh" to reopen this page.</li><br>
+    <li>Two buttons &lsquo;Execute&rsquo; and &lsquo;View Result&rsquo; are given in the environment. Click on &lsquo;Execute&rsquo; to immediately
+		test your solution. Click on &lsquo;View Result&rsquo; to view the result of last tested code. In case you see any message like Compilation Error in Project/Result File Not Found , Click on &lsquo;Execute&rsquo; again</li>
+    <br>
+    <li>Once the test is finished, you cannot retrieve your code again.</li>
+    <br>
+	<li>
+        You cannot copy the code to your system from the environment or vice-versa.
+    </li>
+    <br>
+	<li>
+        In case of any issue, you can reopen your environment by reopening the test in your browser as long as you have time left.  
+    </li>
+    <br>
+	<li>
+        Your result will be saved only when you finish the test or when your time expires. It will not be saved if the test is not open in a browser when your time is up.  
+    </li>
+	</ul>
+		<div align="center">
+        <button class="uk-button uk-button-primary uk-button-small uk-flex uk-flex-middle uk-icon" onclick="showInstructions()">Next</button>
+		</div>
+        <br>
+    </div>
+
+<!--------------------------------------------------------------------------------- -->
+
+</div>
+
+</body>
+<script src="./js/new.js" rel="text/javascript"></script>
+<script>showWelcome();</script>
+
+</html>

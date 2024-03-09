@@ -1,21 +1,27 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { BuffetBooking } from '../buffet-booking/buffet-booking';
+import { catchError, map } from 'rxjs/operators';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class GetBookingService {
+  baseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
-  getBooking(id) {
-    /*
-    Consumes the web service exposed at the URI -> http://localhost:3000/buffetBookings/:id
-    After sending the request, the response must be converted to an observable object of type BuffetBooking
-    Return the response back to the Get booking Component
-  */
+  getBooking(bookingId: string) : Observable<BuffetBooking> {
+    return this.http.get(`${this.baseUrl}/buffetBookings/${bookingId}`).pipe(
+      map((response: any) => {
+        return response; // Extract message from response
+      }),
+      catchError((error: any) => {
+        return throwError(error.error.message); // Handle error response
+      })
+    );
   }
+ 
 }

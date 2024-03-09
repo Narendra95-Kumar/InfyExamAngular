@@ -1,0 +1,14 @@
+.error {
+    color: red;
+   }
+error-message{
+       color: red;
+   }
+   .success {
+       color: green;
+      }
+
+      .response{
+          padding-top: 10px;
+          padding-bottom: 10px;
+      }

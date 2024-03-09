@@ -9,15 +9,30 @@
       <div class="panel panel-primary">
         <div class="panel-heading">View Booking</div>
         <div class="panel-body">
-          <div class="form-group"> 
-            <label for="bookingId">Enter Booking Id</label>
-            <input type="text" class="form-control" id="bookingId" [(ngModel)]="bookingId" (keyup.enter)="getBooking()">
+          <div class="form-group">
+            <label for="bookingId">Enter Booking ID:</label>
+            <input type="text" class="form-control" id="bookingId" [(ngModel)]="bookingId">
           </div>
           <button type="button" class="btn btn-primary" (click)="getBooking()">Get Details</button>
-          <div *ngIf="errorMessage" class="alert alert-danger mt-3">{{ errorMessage}}</div>
-          <div *ngIf="bookingDetails" class="mt-3">
-            <h3>Booking Details</h3>
+          <div class="response" *ngIf="selectedBooking">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Booking Date</th>
+                  <th>Meal Type</th>
+                  <th>Plate Count</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{{ transformDate(selectedBooking.bookedOn) }}</td>
+                  <td>{{ selectedBooking.buffetName }}</td>
+                  <td>{{ transformPlateCount(selectedBooking.plateCount) }}</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
+          <div *ngIf="errorMessage" class="error response">{{ errorMessage }}</div>
         </div>
       </div>
     </div>

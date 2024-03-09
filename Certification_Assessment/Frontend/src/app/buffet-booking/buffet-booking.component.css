@@ -1,15 +1,16 @@
 .error {
  color: red;
- font-size:20px;
 }
 error-message{
     color: red;
 }
 .success {
     color: green;
-    font-size:20px;
    }
-
+   .response{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
 
 .panel-heading {
     text-align: center;

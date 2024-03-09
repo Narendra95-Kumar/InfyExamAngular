@@ -21,12 +21,41 @@ export class GetBookingComponent implements OnInit {
   }
 
   getBooking() {
-     /*
-    It should invoke getBooking(id) of getBookingService
-    by passing the value of id as a parameter, which in turn returns a observable
-    The success callback should populate the selectedBooking with the data in response
-    The error callback should populate the errorMessage with the message in response
-  */
+
+    this.errorMessage = ''; // Reset error message
+    this.selectedBooking = null; // Reset selectedBooking
+
+    // Check if bookingId is provided
+    if (!this.bookingId) {
+      this.errorMessage = 'Please enter a booking ID.';
+      return; // Exit the method early
+    }
+
+    this.getBookingService.getBooking(this.bookingId)
+      .subscribe(
+        (response) => {
+          console.log("response is "+response)
+          this.selectedBooking = response;
+          this.errorMessage = null; // Clear error message on success
+        },
+        (error) => {
+          this.errorMessage = error; // Set error message
+          this.selectedBooking = null; // Clear booking details on error
+        }
+      );
+
    }
+
+   // Helper method to transform booking date
+   transformDate(dateString: Date): string {
+    const dateObj = new Date(dateString);
+    const options :Intl.DateTimeFormatOptions = { month: 'long', day: 'numeric', year: 'numeric' };
+    return dateObj.toLocaleDateString('en-US', options);
+  }
+
+  // Helper method to transform plate count
+  transformPlateCount(plateCount: number): string {
+    return plateCount > 5 ? 'More than 5 plates' : '5 or less plates';
+  }
 
 }

@@ -14,9 +14,40 @@
         <div class="panel panel-primary">
             <div class="panel-heading">Book Your Buffet </div>
             <div class="panel-body">
-
-                <!-- Create the form -->
-
+                <form [formGroup]="buffetBookingForm" (ngSubmit)="bookBuffet()">
+                    <div class="form-group">
+                        <label for="buffetName">Buffet Name:</label>
+                        <select id="buffetName" formControlName="buffetName" class="form-control">
+                          <option *ngFor="let option of buffetOptions" [value]="option.value" [disabled]="option.disabled">{{ option.label }}</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                      <label for="emailId">Email ID:</label>
+                      <input type="email" id="emailId" formControlName="emailId" class="form-control">
+                      <div class="error" *ngIf="buffetBookingForm.get('emailId').errors?.required && buffetBookingForm.get('emailId').touched">
+                        Enter the valid email Id
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="plateCount">Plate Count:</label>
+                      <input type="number" id="plateCount" formControlName="plateCount" class="form-control">
+                      <div class="error" *ngIf="buffetBookingForm.get('plateCount').errors?.required && buffetBookingForm.get('plateCount').touched">
+                        Plate count should be more than 0
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="bookedOn">Booked On:</label>
+                      <input type="date" id="bookedOn" formControlName="bookedOn" class="form-control">
+                      <div class="error" *ngIf="buffetBookingForm.get('bookedOn').errors?.required && buffetBookingForm.get('bookedOn').touched">
+                        Enter the valid booked on field
+                      </div>
+                    </div>
+                    <div>
+                      <button type="submit" class="btn btn-primary" [disabled]="buffetBookingForm.invalid">Book a Buffet</button>
+                    </div>
+                  </form>
+                  <div *ngIf="successMessage" class="success response">{{ successMessage }}</div>
+                  <div *ngIf="errorMessage" class="error response">{{ errorMessage }}</div>
             </div>
         </div>
     </div>

@@ -1,47 +1,52 @@
-<form [formGroup]="addAssetForm" (ngSubmit)="addAsset()">
+<div class="row">
+  <br/>
+  <div class="col-md-6 col-md-offset-3">
+    <div class="panel panel-primary">
+      <div class="panel-heading">View Asset</div>
+      <div class="panel-body">
         <div class="form-group">
-          <label for="assetName">Asset Name</label>
-          <input type="text" formControlName="assetName" id="assetName" class="form-control"/>
-          <div *ngIf="addAssetForm.controls.assetName.invalid && (addAssetForm.controls.assetName.dirty || addAssetForm.controls.assetName.touched)" class="text-danger">
-            Asset Name is required
-          </div>
+          <label for="assetId">Asset ID</label>
+          <input type="text" [(ngModel)]="assetId" id="assetId" class="form-control"/>
         </div>
-        <div class="form-group">
-          <label for="assetCategory">Asset Category</label>
-          <select formControlName="assetCategory" id="assetCategory" class="form-control">
-            <option *ngFor="let category of assetCategories" [value]="category.value" [disabled]="category.disabled">
-              {{ category.displayText }}
-            </option>
-          </select>
-          <div *ngIf="addAssetForm.controls.assetCategory.invalid && (addAssetForm.controls.assetCategory.dirty || addAssetForm.controls.assetCategory.touched)" class="text-danger">
-            Asset Category is required
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="dateOfPurchase">Date of Purchase</label>
-          <input type="date" formControlName="dateOfPurchase" id="dateOfPurchase" class="form-control"/>
-          <div *ngIf="addAssetForm.controls.dateOfPurchase.invalid && (addAssetForm.controls.dateOfPurchase.dirty || addAssetForm.controls.dateOfPurchase.touched)" class="text-danger">
-            <div *ngIf="addAssetForm.controls.dateOfPurchase.errors.required">Date of Purchase is required</div>
-            <div *ngIf="addAssetForm.controls.dateOfPurchase.errors.dateInvalid">Date should not be greater than today's date</div>
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="assetCost">Asset Cost</label>
-          <input type="number" formControlName="assetCost" id="assetCost" class="form-control"/>
-          <div *ngIf="addAssetForm.controls.assetCost.invalid && (addAssetForm.controls.assetCost.dirty || addAssetForm.controls.assetCost.touched)" class="text-danger">
-            Asset Cost is required
-          </div>
-        </div>
-        <div class="form-group">
-          <label for="assetDescription">Asset Description</label>
-          <textarea formControlName="assetDescription" id="assetDescription" class="form-control"></textarea>
-          <div *ngIf="addAssetForm.controls.assetDescription.invalid && (addAssetForm.controls.assetDescription.dirty || addAssetForm.controls.assetDescription.touched)" class="text-danger">
-            <div *ngIf="addAssetForm.controls.assetDescription.errors.required">Asset Description is required</div>
-            <div *ngIf="addAssetForm.controls.assetDescription.errors.maxlength">Maximum 50 characters allowed</div>
-          </div>
-        </div>
-        <button type="submit" class="btn btn-primary" [disabled]="addAssetForm.invalid">Add Asset</button>
-      </form>
-      <div *ngIf="successMessage" class="alert alert-success">
-        {{ successMessage }}
+        <button (click)="viewAsset()" class="btn btn-primary">Get Details</button>
       </div>
+    </div>
+    
+    <div *ngIf="assetDetails" class="panel panel-info">
+      <div class="panel-heading">Asset Details</div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <tr>
+            <th>Asset ID</th>
+            <td>{{ assetDetails.assetId }}</td>
+          </tr>
+          <tr>
+            <th>Asset Name</th>
+            <td>{{ assetDetails.assetName }}</td>
+          </tr>
+          <tr>
+            <th>Asset Category</th>
+            <td>{{ assetDetails.assetCategory }}</td>
+          </tr>
+          <tr>
+            <th>Asset Description</th>
+            <td>{{ assetDetails.assetDescription }}</td>
+          </tr>
+          <tr>
+            <th>Date of Purchase</th>
+            <td>{{ assetDetails.dateOfPurchase }}</td>
+          </tr>
+          <tr>
+            <th>Asset Cost</th>
+            <td>{{ assetDetails.assetCost }}</td>
+          </tr>
+        </table>
+        <button (click)="update()" class="btn btn-warning">Update</button>
+      </div>
+    </div>
+    
+    <div *ngIf="errorMessage" class="alert alert-danger">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>
